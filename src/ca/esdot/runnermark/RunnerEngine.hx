@@ -28,8 +28,8 @@ class RunnerEngine extends Sprite
 	var runner:RunnerSprite;
 	
 	// pools
-	var spritePool:Hash<Array<GenericSprite>>;
-	var tilePool:Hash<Array<TileSprite>>;
+	var spritePool:Map<String,Array<GenericSprite>>;
+	var tilePool:Map<String,Array<TileSprite>>;
 	var groundList:Array<TileSprite>;
 	var particleList:Array<TileSprite>;
 	var enemyList:Array<GenericSprite>;
@@ -58,7 +58,7 @@ class RunnerEngine extends Sprite
 		
 		this.layer = layer;
 		_root = layer;
-		GenericSprite.layer = layer;
+		GenericSprite.tlayer = layer;
 
 		lastIncrement = Lib.getTimer() + 2000;
 		fps = -1;
@@ -67,8 +67,8 @@ class RunnerEngine extends Sprite
 		incrementDelay = 250;
 		maxIncrement = 12000;
 
-		spritePool = new Hash<Array<GenericSprite>>();
-		tilePool = new Hash<Array<TileSprite>>();
+		spritePool = new Map<String,Array<GenericSprite>>();
+		tilePool = new Map<String,Array<TileSprite>>();
 		groundList = new Array<TileSprite>();
 		particleList = new Array<TileSprite>();
 		enemyList = new Array<GenericSprite>();
@@ -376,7 +376,7 @@ class RunnerEngine extends Sprite
 		rect.graphics.beginGradientFill(GradientType.LINEAR, [0x0, 0x1E095E], [1, .5], [0, 255], m);
 		rect.graphics.drawRect(0, 0, 128, 128);
 		var col = #if neko {rgb:0, a:0 } #else 0 #end;
-		var skyData:BitmapData = new BitmapData(128, 128, false, col);
+		var skyData:BitmapData = new BitmapData(128, 128, false);
 		skyData.draw(rect);
 		return skyData;
 	}

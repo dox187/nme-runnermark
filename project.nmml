@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 	
-	<meta title="RunnerMark" package="aze.nme.RunnerMark" version="1.0.0" company="Philippe.me" />
+	<meta title="RunnerMark" package="hu.intren.RunnerMark" version="1.0.0" company="Philippe.me" />
 	
 	<app main="RunnerMark" file="RunnerMark" path="bin" />
 	
-	<window background="#333333" />
-	<window width="800" height="480" unless="mobile" />
-	<window orientation="landscape" vsync="true" if="mobile" />
+	<window background="#333333" vsync="true" />
+	<window width="1024" height="1600" unless="mobile" />
+	<window orientation="landscape"if="mobile" />
 	
 	<window fps="60" />
-	<window fps="62" if="desktop" />
 	
 	<source path="src" />
-	<source path="C:\dev\haxe\libraries\nme-tilelayer\haxelib" />
 	
 	<haxelib name="nme" />
 	<haxelib name="tilelayer" />
@@ -22,16 +20,9 @@
 
 	<icon path="assets/nme.svg" />
 	
-	<ndll name="std" />
-	<ndll name="regexp" />
-	<ndll name="zlib" />
 
 	<!-- optimize JS output -->
-	<section if="haxe2">
-		<haxeflag name="--dead-code-elimination" if="haxe2" />
-		<haxeflag name="--js-modern" if="html5" />
-	</section>	
 	<section if="haxe3">
-		<haxeflag name="-dce=std" if="haxe3" />
+		<!--haxeflag name="-dce=std" if="haxe3" /-->
 	</section>
 </project>
