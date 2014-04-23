@@ -30,7 +30,7 @@ Second goal was to create a simple wrapper on NME's Tilesheet which is rather lo
 
 **TileLayer is now in haxelib**: 
 - [source (and some doc) on github][2]
-- install the library: `haxelib git nme-tilelayer https://github.com/dox187/nme-tilelayer.git` in your terminal
+- install the library: `haxelib git nme-tilelayer https://github.com/dox187/nme-tilelayer.git master haxelib` in your terminal
 - add `<haxelib name="nme-tilelayer" />` in your nmml
 
 HTML5 version
