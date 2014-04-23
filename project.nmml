@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 	
-	<meta title="RunnerMark" package="hu.intren.RunnerMark" version="1.0.0" company="Philippe.me" />
+	<meta title="RunnerMark" package="com.nmehost.runnermark" version="1.0.0" company="Philippe.me" />
 	
-	<app main="RunnerMark" file="RunnerMark" path="bin" />
+	<app main="RunnerMark" file="RunnerMark-nme5" path="bin" />
 	
 	<window background="#333333" vsync="true" />
-	<window width="1024" height="1600" unless="mobile" />
-	<window orientation="landscape"if="mobile" />
+	<window fullscreen="true" unless="mobile" />
+	<window orientation="landscape" if="mobile" />
 	
-	<window fps="60" />
+	<window fps="60" unless="lowfps" />
 	
 	<source path="src" />
 	
 	<haxelib name="nme" />
-	<haxelib name="tilelayer" />
+	<haxelib name="nme-tilelayer" />
 	
 	<assets path="assets" include="*" exclude="nme.svg" />
 
